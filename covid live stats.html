@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="covid live stats.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title> COVID-19 live stats</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 align=center>All about COVID-19 Live Data in <span id="country"></span> <img src="" id="flag"></h1>
+        <div class="board">
+            <div class="card a">
+                <i class="fa fa-tachometer"></i>
+                <h3>Active Cases</h3>
+                <span id="active"></span>
+            </div>
+
+            <div class="card ca">
+                <i class="fa fa-th-list"></i>
+                <h3>Total Cases</h3>
+                <span id="cases"></span>
+            </div>
+
+            <div class="card cr">
+                <i class="fa fa-ambulance"></i>
+                <h3>Critical Cases</h3>
+                <span id="critical"></span>
+            </div>
+
+            <div class="card d">
+                <i class="fa fa-times"></i>
+                <h3>Total Deaths</h3>
+                <span id="death"></span>
+            </div>
+
+            <div class="card r">
+                <i class="fa fa-check-square"></i>
+                <h3>Recovered Cases</h3>
+                <span id="recovered"></span>
+            </div>
+
+            <div class="card U">
+                <i class="fa fa-eye"></i>
+                <h3>Total Test Done</h3>
+                <span id="tests"></span>
+            </div>
+
+            
+        </div>
+		<h1 >!!PLEASE REFRESH THE PAGE FOR THE LATEST UPDATES!!</h1>
+    </div>
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    fetch('https://corona.lmao.ninja/v2/countries/india')
+    .then((Response)=>{
+        return Response.json();
+    })
+
+    .then((data)=>{
+        document.getElementById("flag").src = data.countryInfo.flag;
+
+        document.getElementById("country").innerHTML = data.country.toLocaleString();
+
+        document.getElementById("active").innerHTML = data.active.toLocaleString();
+        document.getElementById("cases").innerHTML = data.cases.toLocaleString();
+        document.getElementById("critical").innerHTML = data.critical.toLocaleString();
+        document.getElementById("death").innerHTML = data.deaths.toLocaleString();
+        document.getElementById("recovered").innerHTML = data.recovered.toLocaleString();
+        document.getElementById("tests").innerHTML = data.tests.toLocaleString();
+    })
+
+</script>

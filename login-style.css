@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration:none;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background: black;
+}
+
+.background{
+    background: url(new2.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+
+.text, .box{
+    margin-top: 50vh;
+    flex: 1;
+}
+
+.text{
+    margin-left: 20%;
+    font-weight: 300px;
+}
+
+
+.text h1{
+    font-size: 90px;
+    color: white;
+    font-weight: 500;
+	
+}
+
+.text p{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.text p a{
+    color:red;
+    font-weight: 700;
+}
+
+.form{
+    background: transparent;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+	 margin-top: 10vh;
+	  margin-right: 70vh;
+	
+}
+
+input{
+    align:center;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color:white;
+    font-family:OCR A Std, monospace;
+	font-size:30px;
+	
+	
+}
+input.text{
+	color:black;
+}
